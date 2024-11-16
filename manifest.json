@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Question Tooltip Extension",
+    "version": "1.0",
+    "description": "Displays API response in a tooltip when hovering over questions.",
+    "permissions": ["scripting", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
